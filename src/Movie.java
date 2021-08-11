@@ -14,10 +14,12 @@ public class Movie {
             System.out.println(line);
         }
 
+        //TODO while loop - return number of movies
+        //TODO roll random number from 1 to nr of movies
+        //TODO pick random movie using random number
+        //TODO method for hiding movie name
 
-        System.out.println("Scanner -> get number of lines");
-        System.out.println("Get random number -> scanner-> choose random movie");
-        System.out.println("Constructor???");
-        System.out.println("FileNotFoundException w main? Zrobić wyjątek.");
+        //TODO constructor??
+        //FIXME FileNotFoundException w main
         }
 }
