@@ -4,6 +4,11 @@ import java.io.File;
 
 public class Movie {
 
+    Movie() {
+        String movie = null;
+        String movieClassified = null;
+    }
+
     public static String randomMoviePicker() throws FileNotFoundException {
 
         File moviesFile = new File("movies.txt");
@@ -19,16 +24,23 @@ public class Movie {
 
         //Picks a movie based on random number
         Scanner fileScanner2 = new Scanner(moviesFile);
+
         String movie = null;
         for(int i = 0; i < randomNumber; i++){
             movie = fileScanner2.nextLine();
         }
-        System.out.println(movie);
 
         return movie;
-
         }
 
+     public static String codedMovie(String movie) {
+        String codedMovie = "";
+        int codeLength = movie.length();
+        for(int i = 0; i < codeLength; i++){
+        String singleLine = "-";
+        codedMovie += singleLine;}
+        return codedMovie;
+    }
     //TODO constructor??
     //FIXME FileNotFoundException w main
 }
