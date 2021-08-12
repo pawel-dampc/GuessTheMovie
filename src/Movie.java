@@ -33,13 +33,11 @@ public class Movie {
         return movie;
         }
 
-     public static String codedMovie(String movie) {
-        String codedMovie = "";
+    public static String codedMovie(String movie) {
+        StringBuilder dashAdd = new StringBuilder();
         int codeLength = movie.length();
-        for(int i = 0; i < codeLength; i++){
-        String singleLine = "-";
-        codedMovie += singleLine;}
-        return codedMovie;
+        dashAdd.append("-".repeat(codeLength));
+        return dashAdd.toString();
     }
     //TODO constructor??
     //FIXME FileNotFoundException w main
