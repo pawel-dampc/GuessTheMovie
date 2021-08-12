@@ -4,22 +4,31 @@ import java.io.File;
 
 public class Movie {
 
-    public static void randomMoviePicker() throws FileNotFoundException {
+    public static String randomMoviePicker() throws FileNotFoundException {
 
         File moviesFile = new File("movies.txt");
         Scanner fileScanner = new Scanner(moviesFile);
 
+        //Check total number of movies in file & generate a random number.
+        int numberOfMovies = 0;
         while (fileScanner.hasNextLine()) {
             String line = fileScanner.nextLine();
-            System.out.println(line);
+            numberOfMovies++;
+        }
+        int randomNumber = (int) (Math.random() * numberOfMovies +1);
+
+        //Picks a movie based on random number
+        Scanner fileScanner2 = new Scanner(moviesFile);
+        String movie = null;
+        for(int i = 0; i < randomNumber; i++){
+            movie = fileScanner2.nextLine();
+        }
+        System.out.println(movie);
+
+        return movie;
+
         }
 
-        //TODO while loop - return number of movies
-        //TODO roll random number from 1 to nr of movies
-        //TODO pick random movie using random number
-        //TODO method for hiding movie name
-
-        //TODO constructor??
-        //FIXME FileNotFoundException w main
-        }
+    //TODO constructor??
+    //FIXME FileNotFoundException w main
 }
