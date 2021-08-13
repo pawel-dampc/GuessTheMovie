@@ -12,14 +12,42 @@ public class Game {
         //CHEAT TO DELETE
         System.out.println(movie);
 
-        System.out.println("You are guessing: " + codedMovie);
-        System.out.println("You have guessed (" + i + ") wrong letters.");
-        System.out.println("Guess a letter: ");
+        while(i<10) {
+            System.out.println("Lenght of movie String " + movie.length());
+            System.out.println("You are guessing: " + codedMovie);
+            System.out.println("You have guessed (" + i + ") wrong letters.");
+            System.out.println("Guess a letter: ");
+
+            String inputGuess = String.valueOf(scanner.next().charAt(0));
+
+            for(int index = 0; index < movie.length(); index++) {
+                int charAt = movie.indexOf(inputGuess);
+                if (charAt == -1) {
+                    System.out.println("No such letter, try again.");
+                    System.out.println("");
+                    i++;
+                }
+                else{
+                    System.out.println(charAt);
+                    int[] guessedChars =
+                    while(charAt<movie.length()){
+
+                    }
+                }
 
 
-        String inputGuess = String.valueOf(scanner.next().charAt(0));
-        int charAt = movie.indexOf(inputGuess);
-        System.out.println(charAt);
+                /*int charAt = movie.indexOf(inputGuess);
+                if (charAt == -1) {
+                    System.out.println("No such letter, try again.");
+                    System.out.println("");
+                    i++;
+                } else {
+                    System.out.println(charAt);
+                }*/
+            }
+
+
+        }
         return null;
     }
 }
