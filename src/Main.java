@@ -10,13 +10,7 @@ public class Main {
             String filePath = "movies.txt";
             String movie = Movie.randomMoviePicker(filePath);
 
-            //Greeting
-            System.out.println("Welcome to Guess the movie game.");
-            System.out.println("Pick a letter and try to reveal the title of the movie. You have 10 guesses.");
-            System.out.println("Good luck!");
 
-            //Move to game?
-            System.out.println("You're guessing: " + movie.replaceAll("[a-z]","_"));
 
             Game game = new Game(movie);
             Game.startGame(movie);
