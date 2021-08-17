@@ -5,7 +5,6 @@ public class Game {
 
     String movie;
 
-
     //Constructor
     Game(String movie){
         this.movie = movie;
@@ -18,14 +17,12 @@ public class Game {
         ArrayList alreadyGuessed = new ArrayList();
         char[] codedMovie = movie.replaceAll("[a-z]", "_").toCharArray();
 
-        //Greeting
+        //GREETING
         System.out.println("Welcome to Guess the movie game.");
         System.out.println("Pick a letter and try to reveal the title of the movie. You have 10 guesses.");
         System.out.println("Good luck!");
         System.out.println();
         System.out.println("You're guessing: " + movie.replaceAll("[a-z]","_"));
-
-        //System.out.println("You're guessing: " + codedMovie); WTF THIS DOESN'T WORK??
 
         //CHEAT TO DELETE
         System.out.println(movie);
@@ -46,7 +43,7 @@ public class Game {
             } else {
                 alreadyGuessed.add(guess);
 
-                //GOOD GUESS
+                //GOOD/BAD GUESS
                 if (movie.contains(guess)) {
                     //MULTIPLE INSTANCES
                     ArrayList<Integer> indexes = new ArrayList<Integer>();
@@ -60,6 +57,12 @@ public class Game {
                         codedMovie[indexes.get(i)] = guess.charAt(0);
                     }
                     System.out.println(codedMovie);
+
+                    if (movie.equals(String.valueOf(codedMovie))) {
+                        System.out.println();
+                        System.out.println("Good job, you've won!");
+                        break;
+                    }
                 } else {
                     System.out.println("Wrong letter");
                     System.out.println();
@@ -67,10 +70,8 @@ public class Game {
                 }
             }
         }
+        if(chances == 0){
+            System.out.println("You've lost.");
+        }
     }
-
-
-
-
-
-    }
+}
