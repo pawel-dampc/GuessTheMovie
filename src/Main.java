@@ -3,18 +3,31 @@ import java.io.IOException;
 
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
-        String movie = Movie.randomMoviePicker();
-        String codedMovie = Movie.codedMovie(movie);
+        //Picks random movie
+        try {
+            String filePath = "movies.txt";
+            String movie = Movie.randomMoviePicker(filePath);
+            System.out.println("!!! Picked movie: " + movie);
+            System.out.println("");
 
 
-        //GREETING
-        System.out.println("Welcome to Guess the movie game.");
-        System.out.println("Pick a letter and try to reveal the title of the movie. You have 10 guesses.");
-        System.out.println("Good luck!");
+            //Greeting
+            System.out.println("Welcome to Guess the movie game.");
+            System.out.println("Pick a letter and try to reveal the title of the movie. You have 10 guesses.");
+            System.out.println("Good luck!");
+            System.out.println("You're guessing: " + movie.replaceAll("[a-z]","_"));
 
-        Game.guess(codedMovie, movie);
 
+            //Game.guess(movie);
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+
+        } catch (FileNotFoundException exception){
+            System.out.println("File not found!");
+            System.exit(1);
+        }
     }
 }

@@ -3,39 +3,26 @@ import java.util.Scanner;
 import java.io.File;
 
 public class Movie {
+       public static String randomMoviePicker(String filePath) throws FileNotFoundException {
+            File moviesFile = new File(filePath);
 
-    Movie() {
-        String movie = null;
-        String movieClassified = null;
+            //Check total number of movies in file & generate a random number.
+            Scanner fileScanner = new Scanner(moviesFile);
+            int numberOfMovies = 0;
+            while (fileScanner.hasNextLine()) {
+                String line = fileScanner.nextLine();
+                numberOfMovies++;
+            }
+            int randomNumber = (int) (Math.random() * numberOfMovies + 1);
+
+
+            //Picks a movie based on random number
+            Scanner fileScanner2 = new Scanner(moviesFile);
+            String movie = null;
+            for (int i = 0; i < randomNumber; i++) {
+                movie = fileScanner2.nextLine();
+            }
+            return movie;
+
     }
-
-    public static String randomMoviePicker() throws FileNotFoundException {
-        File moviesFile = new File("movies.txt");
-
-        //Check total number of movies in file & generate a random number.
-        Scanner fileScanner = new Scanner(moviesFile);
-        int numberOfMovies = 0;
-        while (fileScanner.hasNextLine()) {
-            String line = fileScanner.nextLine();
-            numberOfMovies++;
-        }
-        int randomNumber = (int) (Math.random() * numberOfMovies +1);
-
-        //Picks a movie based on random number
-        Scanner fileScanner2 = new Scanner(moviesFile);
-        String movie = null;
-        for(int i = 0; i < randomNumber; i++){
-            movie = fileScanner2.nextLine();}
-        return movie;
-        }
-
-
-    public static String codedMovie(String movie) {
-        StringBuilder dashAdd = new StringBuilder();
-        int codeLength = movie.length();
-        dashAdd.append("-".repeat(codeLength));
-        return dashAdd.toString();
-    }
-    //TODO constructor??
-    //FIXME FileNotFoundException w main
 }
