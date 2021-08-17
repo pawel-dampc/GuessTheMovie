@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Game {
@@ -16,7 +15,7 @@ public class Game {
         int chances = 10;
         Scanner scanner = new Scanner(System.in);
         String guess = "";
-        ArrayList<String> alreadyGuessed = new ArrayList();
+        ArrayList alreadyGuessed = new ArrayList();
         char[] codedMovie = movie.replaceAll("[a-z]", "_").toCharArray();
 
         //Greeting
@@ -37,11 +36,13 @@ public class Game {
 
             guess = scanner.nextLine();
             guess = guess.toLowerCase();
+            System.out.println();
 
             //CHECK IF CHARACTER ALREADY GUESSED
             if (alreadyGuessed.contains(guess)) {
                 System.out.println("You already guessed that character!");
                 System.out.println("List of already guessed chars: " + alreadyGuessed);
+                System.out.println();
             } else {
                 alreadyGuessed.add(guess);
 
@@ -60,7 +61,9 @@ public class Game {
                     }
                     System.out.println(codedMovie);
                 } else {
-                    System.out.println("Bad letter");
+                    System.out.println("Wrong letter");
+                    System.out.println();
+                    chances--;
                 }
             }
         }
