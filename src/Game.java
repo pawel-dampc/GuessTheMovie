@@ -24,9 +24,6 @@ public class Game {
         System.out.println();
         System.out.println("You're guessing: " + movie.replaceAll("[a-z]","_"));
 
-        //CHEAT TO DELETE
-        System.out.println(movie);
-
         while (chances > 0) {
             System.out.println("You have " + chances + " more guesses.");
             System.out.println("Type your guess: ");
