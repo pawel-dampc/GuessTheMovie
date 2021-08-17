@@ -9,9 +9,6 @@ public class Main {
         try {
             String filePath = "movies.txt";
             String movie = Movie.randomMoviePicker(filePath);
-            System.out.println("!!! Picked movie: " + movie);
-            System.out.println("");
-
 
             //Greeting
             System.out.println("Welcome to Guess the movie game.");
